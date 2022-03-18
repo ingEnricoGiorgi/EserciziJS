@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Corso JavaScript</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Prova JS completamente integrata all'HTML</h1>
+        <span id="clock"></span>
+        <script>
+            function mostraOra() {
+                let clock = document.querySelector("#clock");
+                let now   = new Date();
+                clock.textContent = now.toLocaleTimeString();
+            }
+            mostraOra();
+            setInterval(mostraOra, 1000);
+        </script>
+    </body>        
+</html>

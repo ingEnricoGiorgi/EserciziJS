@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Corso JavaScript</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Messaggio scorrevole</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td id="c01"></td>  
+              <td id="c02"></td>  
+              <td id="c03"></td>  
+              <td id="c04"></td>  
+              <td id="c05"></td>  
+              <td id="c06"></td>  
+              <td id="c07"></td>  
+              <td id="c08"></td>  
+              <td id="c09"></td>  
+              <td id="c10"></td>  
+              <td id="c11"></td>  
+              <td id="c12"></td>  
+              <td id="c13"></td>  
+              <td id="c14"></td>  
+              <td id="c15"></td>  
+              <td id="c16"></td>  
+            </tr>    
+          </tbody>    
+        </table>    
+        <script>
+            let banner = []
+            banner[0]=document.querySelector("#c01");
+            banner[1]=document.querySelector("#c02");
+            banner[2]=document.querySelector("#c03");
+            banner[3]=document.querySelector("#c04");
+            banner[4]=document.querySelector("#c05");
+            banner[5]=document.querySelector("#c06");
+            banner[6]=document.querySelector("#c07");
+            banner[7]=document.querySelector("#c08");
+            banner[8]=document.querySelector("#c09");
+            banner[9]=document.querySelector("#c10");
+            banner[10]=document.querySelector("#c11");
+            banner[11]=document.querySelector("#c12");
+            banner[12]=document.querySelector("#c13");
+            banner[13]=document.querySelector("#c14");
+            banner[14]=document.querySelector("#c15");
+            banner[15]=document.querySelector("#c16");
+                              /* 1234567890123456 */ 
+            let messaggio = [..."viva JavaScript "]
+            let i = 100000;
+            function mostraMessaggio() {
+                for(let [j, lettera] of messaggio.entries()) { 
+                   banner[(i+j)%16].textContent = lettera
+                }
+                i--
+            }
+            mostraMessaggio();
+            setInterval(mostraMessaggio, 1000);
+        </script>
+    </body>        
+</html>

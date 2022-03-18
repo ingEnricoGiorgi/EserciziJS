@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Corso JavaScript</title>
+        <style>
+          table, th, td {
+            border: 1px solid black;
+          }
+        </style>
+        <script>
+            function estraiTesto() {
+   /*
+    *  PROVA  "JavaScript"  del  4 Febbraio 2022
+    *
+    *  sviluppa la funzione estraiTesto in modo che alla pressione del bottone
+    *  etichettato "Elabora" venga analizzato il contenuto delle textarea
+    *  producendo un elenco sintetico delle parole ivi presenti
+    *  affiancato dal numero di occorrenze rilevate.
+    *
+    *  L'elenco deve:
+    *
+    *    1) ignorare maiuscolo e minuscolo ( CASA, Casa, casa ==> (casa,3) )
+    *    2) escludere le parole composte da un solo carattere
+    *    3) escludere le parole che totalizzano una sola occorrenza
+    *
+    */
+            let esame=document.querySelector("#esame").value
+            let b ={}
+           // alert(esame)
+            let a = esame.split(' ')
+            for(let key of a) {
+              let k = key.toLowerCase()
+            //b.k
+            if (b.k === undefined){
+                b[k]=1
+            }else{
+                 b[k]++  //k il numero dei totali che ho trvato
+            }
+          } 
+            let totali={}
+            for(let key of Object.keys(b)){
+              if(b[key]>1){
+                totali[key]=b[key]
+
+              }
+
+            }
+
+            let lista=document.querySelector("#lista")
+  
+            while (lista.childNodes.length > 0) {
+              ultimoElemento = lista.lastChild
+              lista.removeChild(ultimoElemento)
+            }
+   
+            h = lista.insertRow(0)
+            h.insertCell(0).innerHTML = 'parola'
+            h.insertCell(1).innerHTML = 'occorrenze'
+          
+            let j=1;
+            //let totali ={due:2, tre:3}
+            let totali =b
+            for(let key of Object.keys(totali)){
+            riga=lista.insertRow(j)
+            raga.insertCell(0).innerHTML=key
+            raga.insertCell(1).innerHTML=totali[key]
+            j++
+            
+          }
+            
+            /*
+    *  Qui le parole (ed i rispettivi numeri di occorrenze) rilevati nella
+    *  analisi della textarea (svolta nella parte iniziale della funzione)
+    *  vanno inserite nella tabella con id="lista"
+    */
+   
+          }
+        </script>
+    </head>
+    <body>
+      <h1>Conta parole</h1>
+      <textarea id="esame" rows="8" cols="60"></textarea>
+      <button onclick="estraiTesto()">Elabora</button>
+      <table id="lista"></table>
+    </body>
+</html>

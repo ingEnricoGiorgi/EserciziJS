@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Corso JavaScript</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Prova JS completamente integrata all'HTML</h1>
+        <p id="clocktext"></p>
+        <span id="clock"></span>
+        <script>
+            function mostraOra() {
+                let clock = document.querySelector("#clock");
+                let now   = new Date();
+                clock.textContent = now.toLocaleTimeString();
+            }
+            document.querySelector("#clocktext").textContent="provo a fissare il contenuto di un paragrafo";
+            /*
+            The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned
+            */
+            mostraOra();
+            setInterval(mostraOra, 1000);
+        </script>
+    </body>        
+</html>
