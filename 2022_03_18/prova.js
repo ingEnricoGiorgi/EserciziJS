@@ -34,14 +34,14 @@ function mostra(hs){
   document.getElementById("anni").textContent=hs.eta;
 
 }
-
+/* lo utilizzavamo col bottne in prova.html
 function tryfetch() {
         fetch("allievi.php?" + new URLSearchParams(
           {id: Math.floor(Math.random() * totale) + 1}))
           .then(r => r.json())
           .then(b => mostra(b))//richiamo il mostra
       }
-
+*/
 function tryfetch2(e) {
   //console.log(e.target.value);
           fetch("allievi.php?" + new URLSearchParams(

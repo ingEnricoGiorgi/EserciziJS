@@ -26,20 +26,29 @@
     */
             let esame=document.querySelector("#esame").value
             let b ={}
+           // console.log("B",typeof b) object
            // alert(esame)
             let a = esame.split(' ')
+            console.log("A",a);
+          //  console.log(typeof a) a object
             for(let key of a) {
               let k = key.toLowerCase()
+            //  console.log("K",typeof k) stringa
             //b.k
-            if (b.k === undefined){
-                b[k]=1
+            //console.log("b.k",typeof b[k])
+            if (b[k] != undefined ){
+                b[k]++
+               
             }else{
-                 b[k]++  //k il numero dei totali che ho trvato
+                 b[k]=1  //k il numero dei totali che ho trvato
+               
             }
           } 
+          
             let totali={}
             for(let key of Object.keys(b)){
               if(b[key]>1){
+               
                 totali[key]=b[key]
 
               }
@@ -59,11 +68,11 @@
           
             let j=1;
             //let totali ={due:2, tre:3}
-            let totali =b
+            totali =b
             for(let key of Object.keys(totali)){
             riga=lista.insertRow(j)
-            raga.insertCell(0).innerHTML=key
-            raga.insertCell(1).innerHTML=totali[key]
+            riga.insertCell(0).innerHTML=key
+            riga.insertCell(1).innerHTML=totali[key]
             j++
             
           }
