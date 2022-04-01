@@ -1,0 +1,10 @@
+.visitato {
+    font-size: large;
+    background-color: rgb(229, 255, 0) ;
+}
+
+.non_visitato{
+    
+    font-size: small;
+    background-color: none;
+}
