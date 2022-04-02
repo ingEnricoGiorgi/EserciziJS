@@ -5,7 +5,8 @@ let indent = '---';
 
 function myF(e) { 
 
-    console.log(indenta(level) + Object.prototype.toString.call(e)); 
+    console.log(indenta(level) + 
+    Object.prototype.toString.call(e)); 
 }
 function indenta(lv){
     let res='';

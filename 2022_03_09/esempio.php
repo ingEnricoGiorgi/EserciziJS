@@ -2,7 +2,7 @@
 //phpinfo();
 $conn=null;
 $id=$_GET['id'];
-$conn=mysqli_connect("localhost","root","","esempioJS");
+$conn=mysqli_connect("localhost","root","","javascript");
 
 if (! mysqli_connect_errno() ) {
     // print "Connessione avvenuta con successo";
@@ -31,7 +31,7 @@ echo  "id: ".$id." nome: ". $nome ." cognome: ".$cognome;
 
 function leggi($id){
     global $conn;
-    $query = "SELECT * FROM alunni WHERE id=$id";
+    $query = "SELECT * FROM allievi WHERE id=$id";
     $result = mysqli_query($conn, $query);
     if (! $result){
         print ("Errore nella Query:" . mysqli_error($conn));
@@ -42,7 +42,7 @@ function leggi($id){
 
 function inserisci(){
     global $conn;
-    $query = "INSERT INTO alunni (nome,cognome) VALUES ('andrea','ribuoli')";
+    $query = "INSERT INTO allievi (nome,cognome) VALUES ('andrea','ribuoli')";
     $result = mysqli_query($conn, $query);
     if (! $result){
         print ("Errore nella Query:" . mysqli_error($conn));

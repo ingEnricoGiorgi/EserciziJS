@@ -22,8 +22,7 @@ function preset(z) {
 }
 
 function provafetch(e) {
-  fetch("mytest.php", 
-  {method:"POST",body: new URLSearchParams({id: e.target.value}) })
+  fetch("mytest.php",{method:"POST",body: new URLSearchParams({id: e.target.value}) })
 
     .then((r) => {
       if (r.ok && r.headers.get("Content-Type") === "application/json") {

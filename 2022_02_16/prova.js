@@ -7,6 +7,8 @@ document.getElementById("2").innerHTML =p3;
 
 }
 function errata(){
+//This will find the first element in the html with 
+//the tag specified
 let b = Document.getElementByTagName('body')[0];
 alert(b.firstChild)
 let cp=b.firstChild
