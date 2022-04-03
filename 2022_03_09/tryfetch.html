@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,22 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <title>tryfetch</title>
     <script>
-        function tryfetch(){
-            fetch("esempio.php?id=3",{method:GET}) //mi ha restituto il formato json che avevo ottenuto
-            // facendo il stringify di un oggetto
-            .then(r => r.text()) //prendo il body e lo converto in formato text
-            .then(b =>console.log(b))//stampo il body
+        /* var mybutt = document.getElementById("demo").innerHTML;          
+          alert (mybutt.toString());  ?????perchè null se scritto qua fuori??
+       */ 
+        function tryfetch() {
+            var mybutt = document.getElementById("demo").innerHTML;          
+           // alert (mybutt.toString());
+            let myJSON = JSON.stringify(mybutt);
+            //.then(e => e.json())  //prendo il body e lo converto in formato text
+            .then(b => console.log(b))//stampo il body
+        
         }
     </script>
 </head>
+
 <body>
-    <form action="esempio.php" method="get">
-      <button onclick="tryfetch()">Mangiami</button>
+    <form action="./tryfetch.html" method="get">
+        <button id="demo" onclick="tryfetch()">Mangiami</button>
     </form>
 </body>
-</html>
