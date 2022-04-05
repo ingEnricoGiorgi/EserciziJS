@@ -3,7 +3,7 @@ let totale = 0;
 // let a = document.getElementById("button");
 // a.disabled = false;
 fetch("studenti.php")
-  .then((r) => r.json()) 
+  .then((r) => r.json()) //riconverte da json nell'oggetto iniziale
   .then((b) => preset(b)); // prima ottengo il totale
 
 
@@ -23,7 +23,7 @@ function preset(z) {
 
 function provafetch(e) {
   fetch("mytest.php",{method:"POST",body: new URLSearchParams({id: e.target.value}) })
-
+  
     .then((r) => {
       if (r.ok && r.headers.get("Content-Type") === "application/json") {
         return r.json();
@@ -36,6 +36,8 @@ function provafetch(e) {
     }) // Promise: conversione in formato json
     .then((b) => mostra(b)) // Promise: richiama il mostra */
     .catch((e) => mostraErrore(e.toString())); // chiama l'errore
+    document.getElementById("message_area").textContent = null;
+    //svuota l'errore
 }
 
 
@@ -44,6 +46,7 @@ function mostra(s) {
   document.getElementById("cognome").textContent = s.cognome;
   document.getElementById("eta").textContent = s.eta;
   document.getElementById("interessi").textContent = s.interessi;
+
 }
 
 function mostraErrore(msg) {
